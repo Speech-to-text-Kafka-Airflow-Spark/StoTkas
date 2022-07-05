@@ -171,7 +171,7 @@ sudo python3 setup.py install
 
 <hr>
 
-# # <a name='license'></a>Contributors
+# <a name='contributors'></a>Contributors
 
 <!-- Copy-paste in your Readme.md file -->
 
