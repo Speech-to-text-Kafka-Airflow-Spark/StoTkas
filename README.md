@@ -169,12 +169,10 @@ sudo python3 setup.py install
 
 [MIT](https://github.com/Speech-to-text-Kafka-Airflow-Spark/StoTkas/blob/main/LICENSE)
 
-<hr>
+<!-- <hr> -->
 
-# <a name='contributors'></a>Contributors
+<!-- # <a name='contributors'></a>Contributors -->
 
-<!-- Copy-paste in your Readme.md file -->
+<!-- ![contributors list](https://contrib.rocks/image?repo=Speech-to-text-Kafka-Airflow-Spark/StoTkas)
 
-![contributors list](https://contrib.rocks/image?repo=Speech-to-text-Kafka-Airflow-Spark/StoTkas)
-
-Made with [contrib.rocks](https://contrib.rocks)
+Made with [contrib.rocks](https://contrib.rocks) -->
