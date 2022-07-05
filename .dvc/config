@@ -1,0 +1,5 @@
+[core]
+    remote = dvc-remote
+    autostage = true
+['remote "dvc-remote"']
+    url = /tmp/dvc-storage
