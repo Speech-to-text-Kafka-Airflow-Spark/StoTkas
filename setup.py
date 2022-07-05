@@ -50,7 +50,7 @@ setup(
                                     'tests', 'notebooks', 'models']),
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/week4-SpeechRecognition/Speech-to-Text',
+    url='https://github.com/Speech-to-text-Kafka-Airflow-Spark/StoTkas',
     version='1.0.0',
     zip_safe=False,
 )
