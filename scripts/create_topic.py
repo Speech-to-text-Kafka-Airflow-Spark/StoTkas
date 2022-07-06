@@ -6,14 +6,11 @@ class Topics():
         self.topics = [group_name +'_'+ topic for topic in topics]
         
     def create_topic(topic_name):
-        admin_client = KafkaAdminClient(bootstrap_servers=["b-1.demo-cluster-1.9q7lp7.c1.kafka.eu-west-1.amazonaws.com:9092","b-2.demo-cluster-1.9q7lp7.c1.kafka.eu-west-1.amazonaws.com:9092"],
-        client_id='tests_id',
-
-
-    )
+        admin_client = KafkaAdminClient(
+        bootstrap_servers="localhost:9092", 
+        client_id='group1'
+)
 
         topic_list = []
-        topic_list.append(NewTopic(name=topic_name, num_partitions=1, replication_factor=2))
+        topic_list.append(NewTopic(name="example_topic", num_partitions=1, replication_factor=1))
         admin_client.create_topics(new_topics=topic_list, validate_only=False)
-
-        return admin_client.list_topics()
