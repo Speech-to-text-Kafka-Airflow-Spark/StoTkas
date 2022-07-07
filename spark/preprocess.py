@@ -3,15 +3,23 @@ import boto3
 
 dataset_path = '/home/samuel_alene/data'
 
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder \
+                    .master('local[1]') \
+                    .appName('SparkByExamples.com') \
+                    .getOrCreate()
+
+
 # Subscribe to 1 topic, with headers
-df = spark \
-  .readStream \
-  .format("kafka") \
-  .option("kafka.bootstrap.servers", "host1:port1,host2:port2") \
-  .option("subscribe", "topic1") \
-  .option("includeHeaders", "true") \
-  .load()
-df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)", "headers")
+df = spark.readStream
+        .format("kafka")
+        .option("kafka.bootstrap.servers", "localhost:9092")
+        .option("subscribe", "json_topic")
+        .option("startingOffsets", "earliest") // From starting
+        .load()
+
+# df.printSchema()
 
 def upload_file(file_name: str, bucket: str, object_name=None):
     # If S3 object_name was not specified, use file_name
