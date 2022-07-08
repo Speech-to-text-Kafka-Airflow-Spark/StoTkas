@@ -1,23 +1,34 @@
-import { Container } from '@mui/material';
-import React, {useEffect, useState} from "react";
-import { makeStyles } from '@mui/material/styles';
 
+import React ,{useState, useEffect} from "react";
+import  Actions from "../components/AudioActions"
+import useRecorder from "../cor/userRecorder";
 
+ function HomePage() {
+   
+    let [audioURL, isRecording, startRecording, stopRecording] = useRecorder();
+    
+    const record = () => {
+        console.log("Record");
+        // sendAudio()
+            startRecording()
+      }
+    const stop = () => {
+        console.log("stop");
+            stopRecording()
+      }
 
-export default function HomePage() {
-    const classes = useStyles();
-    const [transcription, receiveTranscription, sendAudio] = useServer();
+    console.log(isRecording);
   return (
-    <Container component="main" maxWidth="xs">      
-    <div className="paper">
+    
+    <div className='homePage'>      
+
       <h1>
        እንካን በድህና መጡ!
       </h1>
-                  <Typography className="transcription" color="textSecondary" align="center" gutterBottom>
-            {transcription}
-          </Typography>
-      
-    </div>
-  </Container>
+      <Actions audioURL = {audioURL} recordHandler={record} stopHandler={stop} ></Actions>
+           
+
+  </div>
   )
 }
+export default HomePage;
