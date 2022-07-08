@@ -9,7 +9,7 @@ sys.path.insert(0, '../logs/')
 sys.path.append(os.path.abspath(os.path.join('..')))
 from log import App_Logger
 
-app_logger = App_Logger("logs/kafka-python-client.log").get_app_logger()
+app_logger = App_Logger("../logs/kafka_python_client.log").get_app_logger()
 
 class KafkaClient():
     def __init__(self, id: str, servers: list) -> None:
@@ -18,7 +18,7 @@ class KafkaClient():
             self.id = id
             self.consumer, self.producer, self.admin_client = None, None, None
             self.logger = App_Logger(
-            "logs/kafka-python-client.log").get_app_logger()
+            "../logs/kafka_python_client.log").get_app_logger()
             for index, server in enumerate(self.kafka_servers):
                 print(f'\t{index + 1} - {server}')
 
@@ -26,6 +26,9 @@ class KafkaClient():
             self.logger.info(f"FAILED TO CREATE KafkaClient OBJECT INSTANCE")
 
     def create_admin_client(self) -> None:
+        '''
+        # 
+        '''
         try:
             self.admin_client = KafkaAdminClient(
                     bootstrap_servers=self.kafka_servers,
@@ -159,7 +162,7 @@ class KafkaClient():
 if __name__ == "__main__":
 
     kf_client = KafkaClient(
-        'milkyb',
+        'abel',
         [
             'b-1.demo-cluster-1.9q7lp7.c1.kafka.eu-west-1.amazonaws.com:9092',
             'b-2.demo-cluster-1.9q7lp7.c1.kafka.eu-west-1.amazonaws.com:9092'
