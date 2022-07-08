@@ -57,6 +57,7 @@ df = spark \
 query = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)") \
     .writeStream \
     .format("console") \
+    .option("checkpointLocation", "/home/sam/Desktop/10_acad/week_9/streaming_app/data/kafka") \
     .start()
 
 
