@@ -40,13 +40,7 @@ spark = SparkSession.builder \
                     .getOrCreate()
 
 
-# Subscribe to 1 topic, with headers
-# df = spark.readStream \
-#         .format("kafka") \
-#         .option("kafka.bootstrap.servers", "localhost:9092") \
-#         .option("subscribe", "quickstart-events") \
-#         .option("startingOffsets", "earliest")            
-#         .load()
+
 
 # df.printSchema()
 
@@ -58,11 +52,7 @@ df = spark \
     .option("startingOffsets", "earliest") \
     .load()
 
-# query = df \
-#     .writeStream \
-#     .outputMode("complete") \
-#     .format("console") \
-#     .start()
+
 
 query = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)") \
     .writeStream \
