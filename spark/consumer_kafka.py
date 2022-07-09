@@ -6,8 +6,8 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StructField, StructType, IntegerType, \
     StringType, FloatType, TimestampType
 
-sales_data = "../data/clean_data.csv"
-topic_input = "pagila.sales.spark.streaming"
+sales_data = "/home/sam/Desktop/10_acad/week_9/streaming_app/data/clean_data.csv"
+topic_input = "test"
 
 import findspark
 findspark.init('/opt/spark')
@@ -21,6 +21,7 @@ def main():
 
     spark = SparkSession \
         .builder \
+        .master('local[1]') \
         .appName("kafka-streaming-sales-console") \
         .getOrCreate()
 
@@ -40,6 +41,7 @@ def read_from_kafka(spark):#, params):
     df_sales = spark.readStream \
         .format("kafka") \
         .options(**options_read) \
+        .option("startingOffsets", "earliest") \
         .load()
 
     return df_sales

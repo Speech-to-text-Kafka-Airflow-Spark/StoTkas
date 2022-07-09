@@ -29,3 +29,4 @@ kafkaStream = KafkaUtils.createDirectStream(ssc, [topic],{
 ssc.start()
 time.sleep(600)
 ssc.stop(stopSparkContext=True, stopGracefully=True)
+

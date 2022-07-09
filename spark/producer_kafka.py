@@ -8,8 +8,8 @@ from pyspark.sql.types import StructField, StructType, IntegerType, \
     StringType, FloatType
 from pyspark.sql.window import Window
 
-sales_data = "../data/clean_data.csv"
-topic_output = "pagila.sales.spark.streaming"
+sales_data = "/home/sam/Desktop/10_acad/week_9/streaming_app/data/clean_data.csv"
+topic_output = "test"
 
 import findspark
 findspark.init('/opt/spark')
@@ -25,7 +25,8 @@ def main():
 
     spark = SparkSession \
         .builder \
-        .appName("kafka-seed-sales") \
+        .master('local[1]') \
+        .appName("kafka-spark") \
         .getOrCreate()
 
     df_sales = read_from_csv(spark)#, params)
@@ -67,13 +68,13 @@ def write_to_kafka(df_sales):
         # "kafka.sasl.client.callback.handler.class":
         #     "software.amazon.msk.auth.iam.IAMClientCallbackHandler",
     }
-
+    # .format("console") \
     df_sales \
         .selectExpr("CAST(headline AS STRING) AS key",
                     "to_json(struct(*)) AS value") \
         .write \
-        .format("kafka") \
-        .options(**options_write) \
+        .format("console") \
+        .option("checkpointLocation", "/home/sam/Desktop/10_acad/week_9/streaming_app/data/kafka")  \
         .save()
 
 

@@ -48,7 +48,7 @@ df = spark \
     .readStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "localhost:9092") \
-    .option("subscribe", "quickstart-events") \
+    .option("subscribe", "test") \
     .option("startingOffsets", "earliest") \
     .load()
 
