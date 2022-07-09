@@ -1,6 +1,6 @@
 
-import React ,{useState, useEffect} from "react";
-import  Actions from "../components/AudioActions"
+import React from "react";
+import Actions from "./AudioActions";
 import useRecorder from "../cor/userRecorder";
 
  function HomePage() {
@@ -10,11 +10,13 @@ import useRecorder from "../cor/userRecorder";
     const record = () => {
         console.log("Record");
         // sendAudio()
-            startRecording()
+            // startRecording()
+            return 'hello'
       }
     const stop = () => {
         console.log("stop");
-            stopRecording()
+            // stopRecording()
+            return 'bye'
       }
 
     console.log(isRecording);
@@ -22,11 +24,10 @@ import useRecorder from "../cor/userRecorder";
     
     <div className='homePage'>      
 
-      <h1>
-       እንካን በድህና መጡ!
+      <h1> እንካን በድህና መጡ!
       </h1>
       <Actions audioURL = {audioURL} recordHandler={record} stopHandler={stop} ></Actions>
-           
+          
 
   </div>
   )
