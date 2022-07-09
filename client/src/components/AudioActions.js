@@ -8,8 +8,8 @@ import { AudioPlayer } from 'mui-audio-player';
 
 export default function AudioActions(audioUrl, recordHandler, stopHandler ) {
     const [currentState, setCurrentState] = useState("idle");
-     console.log(recordHandler);
-     console.log(stopHandler);
+    //  console.log(recordHandler);
+    //  console.log(stopHandler);
     const onStart = () => {
         setCurrentState("recording");
         recordHandler()

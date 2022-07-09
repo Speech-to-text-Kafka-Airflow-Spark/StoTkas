@@ -10,13 +10,13 @@ import useRecorder from "../cor/userRecorder";
     const record = () => {
         console.log("Record");
         // sendAudio()
-            // startRecording()
-            return 'hello'
+            startRecording()
+           
       }
     const stop = () => {
         console.log("stop");
-            // stopRecording()
-            return 'bye'
+            stopRecording()
+           
       }
 
     console.log(isRecording);
