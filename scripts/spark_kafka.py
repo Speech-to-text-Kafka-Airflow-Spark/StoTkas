@@ -12,7 +12,7 @@ from pyspark.sql import SparkSession
 
 spark = SparkSession.builder \
                     .master('local[1]') \
-                    .appName('SparkByExamples.com') \
+                    .appName('audio') \
                     .getOrCreate()
 
 
@@ -33,7 +33,7 @@ df = spark \
 query = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)") \
     .writeStream \
     .format("console") \
-    .option("checkpointLocation", "/home/sam/Desktop/10_acad/week_9/streaming_app/data/kafka") \
+    .option("checkpointLocation", "/mnt/10ac-batch-5/week9/chang/kafka") \
     .start()
 
 
