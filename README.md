@@ -12,17 +12,6 @@
 
 ![causal-image](https://miro.medium.com/max/1072/1*TzRyGCOSa4aZhda3B2H-qg.png)
 
-<!-- ## Presentation Slide
-
-- [Rossmann Pharmaceutical Sales prediction](https://www.canva.com/design/DAFBtdnLoKQ/hxJHGTgvoTwJMX9hXbbGVA/view?utm_content=DAFBtdnLoKQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-
-## Data visualization link
-
-- [visualization link](https://share.streamlit.io/abel-blue/pharmaceutical-sales-prediction/main/app.py)
-
-## Articles
-
-- [Medium Article](https://medium.com/@Abel-Blue/pharmaceutical-sales-prediction-using-a-deep-learning-model-92d7d1e9626b) -->
 
 ## Table of Contents
 
@@ -39,56 +28,18 @@
 <hr>
 
 ## Introduction
-
-<!-- > <p>Causal inference is an important link between the practice of cancer epidemiology and effective cancer prevention.</p>
-
- <p>The causal graph is a central object in the framework mentioned above, but it is often unknown, subject to personal knowledge and bias, or loosely connected to the available data. The main objective of the task is to highlight the importance of the matter in a concrete way. In this spirit, trainees are expected to attempt the following tasks:
+ <p>Large and quality datasets are critical to ensure the performance, fairness, robustness, reliability, and scalability of ML systems. Data scientists often lack diverse and large datasets to train and test the machine learning models they design. This project focuses on developing a tool that can be deployed to process posting and receiving text and audio files from and into a data lake, apply transformation in a distributed manner, and load it into a warehouse in a suitable format to train a speech-t0-text model.  The general objective of the project is to develop a data engineering pipeline using Apache Kafka, Apache Spark and Airflow to allow collection of millions of Amharic and Swahili audio recordings from speakers reading digital text in app and web platforms. These recordings can be used to produce a large and diverse dataset for training and testing speech-to-text processing models.
 </p>
-
-1. Perform a causal inference task using Pearl’s framework;
-2. Infer the causal graph from observational data and then validate the graph;
-3. Merge machine learning with causal inference;
-4. Use the resulting graph to predict the outcome of a disease;
-
-The first is straightforward, the second and third are still open questions in the research community, hence may need a bit more research, innovation, and thinking outside the box from trainees. -->
-
-> <b>Data Features:</b>
->
-> <p>
-
-<!-- > Features in the data are computed from a digitized image of a fine needle aspirate (FNA) of a breast mass. -->
-
-<b>Attribute Information</b>:
-
-<!-- - ID number
-- Diagnosis (M = malignant, B = benign) -->
-
-<!-- <b>The remaining (3-32)</b>
-
-Ten real-valued features are computed for each cell nucleus:
-
-- radius (mean of distances from center to points on the perimeter)
-- texture (standard deviation of gray-scale values)
-- Perimeter
-- Area
-- smoothness (local variation in radius lengths)
-- compactness (perimeter^2 / area - 1.0)
-- concavity (severity of concave portions of the contour)
-- concave points (number of concave portions of the contour)
-- Symmetry
-- fractal dimension ("coastline approximation" - 1)
-
-The mean, standard error and "worst" or largest (mean of the three largest values) of these features were computed for each image, resulting in 30 features. For instance, field 3 is Mean Radius, field 13 is Radius SE, field 23 is Worst Radius. All feature values are recorded with four significant digits.
-
-> Missing attribute values: none
-> Class distribution: 357 benign (not cancer), 212 malignant (cancer)
-
+<p>The proposed data pipeline was built on Apache Kafka, an open-source distributed event streaming platform. By combining messaging, storage, and stream processing, the data pipeline allow collection, storage and analysis of real-time audio datasets. The data pipeline consists of the following key components:
 </p>
-
-<hr> -->
-
-<!-- <img src="images/slide/3.png" name="">
-<img src="images/slide/4.png" name=""> -->
+<ol>
+    <li>Data producers</li>
+    <li>Data consumers</li>
+    <li>Apache Kafka cluster</li>
+    <li>Amazon S3 bucket Connectors</li>
+    <li>Apache Spark Stream preprocessors</li>
+</ol>
+ <p>
 
 ## Project Structure
 
