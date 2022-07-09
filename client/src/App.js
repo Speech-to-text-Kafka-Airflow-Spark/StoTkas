@@ -7,11 +7,8 @@ function App() {
 
 return (
   <div className='app'>
-     <h1>
-     እንካን በድህና መጡ!
-    </h1>
+     <h1 className='h1app'>እንካን በድህና መጡ! </h1>
     <HomePage/>
-
 </div>
 )
 }
