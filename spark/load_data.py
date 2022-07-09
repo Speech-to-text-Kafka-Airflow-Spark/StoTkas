@@ -9,8 +9,6 @@ def preprocess(dataset_path):
     # loop through all sub-folders
     for i, (dirpath, dirnames, filenames) in enumerate(os.walk(dataset_path)):
 
-
-        if dirnames == 'metadata'
         # ensure we're processing at sub-folder level
         if dirpath is not dataset_path:
 
