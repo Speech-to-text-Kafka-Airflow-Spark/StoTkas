@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Recorder = () => {
+const useRecorder = () => {
   const [audioURL, setAudioURL] = useState("");
   const [isRecording, setIsRecording] = useState(false);
   const [recorder, setRecorder] = useState(null);
@@ -49,4 +49,4 @@ async function requestRecorder() {
   const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
   return new MediaRecorder(stream);
 }
-export default Recorder;
+export default useRecorder;
