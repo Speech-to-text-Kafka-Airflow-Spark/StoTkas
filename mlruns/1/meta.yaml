@@ -1,0 +1,4 @@
+artifact_location: file:///home/abel_mitiku/root/Speech-to-Text/notebooks/mlruns/1
+experiment_id: '1'
+lifecycle_stage: active
+name: Speech Model-RNN-baseline
