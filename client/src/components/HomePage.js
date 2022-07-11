@@ -1,7 +1,9 @@
 
 import React from "react";
 import Actions from "./AudioActions";
-import useRecorder from "../cor/userRecorder";
+import useRecorder from "../cor/Recorder";
+//import Server from "../cor/Server";
+//import { useEffect, useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -30,14 +32,13 @@ const useStyles = makeStyles((theme) => ({
 
  function HomePage() {
   const classes = useStyles();
-  //const [transcription, receiveTranscription, sendAudio] = useServer();
-  // const [audio, setAudio] = useState("")
-
+  //const [transcription, receiveTranscription, sendAudio] = Server();
+ 
   let [audioURL, isRecording, startRecording, stopRecording] = useRecorder();
 
   const record = () => {
     console.log("Record");
-    // sendAudio()
+   // sendAudio()
 		startRecording()
   }
 	const stop = () => {
