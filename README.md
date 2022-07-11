@@ -103,7 +103,7 @@ cd StoTkas
 sudo python3 setup.py install
 ```
 
-#### <a name='conda'></a>Setting up docker container for the project
+### <a name='conda'></a>Setting up docker container for the project
 
 #### Setting up kafka and zookeeper
 
