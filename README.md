@@ -103,6 +103,20 @@ cd StoTkas
 sudo python3 setup.py install
 ```
 
+#### <a name='conda'></a>Setting up docker container for the project
+
+#### Setting up kafka and zookeeper
+
+```bash
+docker-compose -f docker-compose.yml up -d
+```
+
+#### Setting up spark and airflow
+
+```bash
+docker-compose -f docker-compose1.yml up -d
+```
+
 <hr>
 
 # <a name='license'></a>License
